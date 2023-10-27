@@ -88,6 +88,12 @@ class Pessoa {
             Altura: ${this.altura}
             Peso: ${this.peso}`);
     }
+    /**
+     * GRUG
+     */
+    cadastroPessoa(pessoa) {
+        console.log(`${pessoa.nome} cadastrado(a) com sucesso`);
+    }
 }
 exports.Pessoa = Pessoa;
 //# sourceMappingURL=Pessoa.js.map

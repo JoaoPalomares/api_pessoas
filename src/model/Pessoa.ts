@@ -114,4 +114,11 @@ export class Pessoa {
             Altura: ${this.altura}
             Peso: ${this.peso}`);
     }
+
+/**
+ * GRUG
+ */
+cadastroPessoa (pessoa: Pessoa) {
+    console.log(`${pessoa.nome} cadastrado(a) com sucesso`)
+}
 }
