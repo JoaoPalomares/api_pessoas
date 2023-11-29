@@ -5,35 +5,44 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
+const Veiculos_1 = require("../model/Veiculos");
 const bancoDeDados_1 = require("./bancoDeDados");
-const Pessoa_1 = require("../model/Pessoa");
-(0, bancoDeDados_1.inicializarPessoas)();
+// Inicializa uma lista de pessoas
+(0, bancoDeDados_1.inicializarVeiculos)();
+// Cria o servidor express
 const app = (0, express_1.default)();
-const port = 3000;
+// Define a porta que o servidor vai escutar as requisições
+const port = 3001;
+// Habilitando o uso de JSON no servidor express
 app.use(express_1.default.json());
+// Habilitando o uso do CORS para garantir a segurança das requisições
 app.use((0, cors_1.default)());
+// Primeira rota, a rota principal do servidor
 app.get('/', (req, res) => {
     console.log('Recebi sua requisição');
     res.send({ mensagem: "Estou devolvendo a resposta para sua requisição" });
 });
-app.get('/pessoas', (req, res) => {
-    const listaDePessoas = (0, bancoDeDados_1.listarPessoas)();
-    res.json(listaDePessoas);
+// Rota para consultar veiculos
+app.get('/veiculos', (req, res) => {
+    const listaDeVeiculos = (0, bancoDeDados_1.listarVeiculos)();
+    console.log(`Retornando a lista dos veículos cadastrados`);
+    res.json(listaDeVeiculos);
 });
+// Servidor sendo executado
 app.listen(port, () => {
-    console.log(`Servidor Express ouvindo na endereço http://localhost:${port}/`);
+    console.log(`Servidor express ouvindo no endereço http://localhost:${port}/`);
 });
 // Rota para cadastrar uma pessoa
-app.post('/cadastro', (req, res) => {
+app.post('/cadastrar', (req, res) => {
     // Recuperando as informações JSON que vieram no corpo (body) da requisição (req) e desestruturando essa informação para cada atributo
-    const { nome, cpf, data_nascimento, telefone, endereco, altura, peso } = req.body;
+    const { marca, modelo, versao, placa, combustivel, eixos, peso } = req.body;
     // Criando um novo objeto do tipo Pessoa com as informações recuperadas da requisição
-    const pessoa = new Pessoa_1.Pessoa(nome, cpf, new Date(data_nascimento), telefone, endereco, altura, peso);
+    const veiculo = new Veiculos_1.Veiculos(marca, modelo, versao, placa, combustivel, eixos, peso);
     // Apenas imprimindo as informações do objeto no console do servidor
-    console.log(pessoa);
+    console.log(veiculo);
     // Chamando a função para persistir (salvar) os dados da pessoa no banco de dados
-    (0, bancoDeDados_1.persistirPessoa)(pessoa);
+    (0, bancoDeDados_1.persistirVeiculos)(veiculo);
     // Resposta que o servidor irá enviar ao front-end (A resposta será estrutura em um JSON)
-    res.json({ mensagem: "Pessoa cadastrada com sucesso" });
+    res.json({ mensagem: "Veículo cadastrado com sucesso" });
 });
 //# sourceMappingURL=app.js.map

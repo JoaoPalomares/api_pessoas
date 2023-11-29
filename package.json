@@ -1,5 +1,5 @@
 {
-  "name": "mvc2",
+  "name": "api-veiculos-back",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Gabriel",
+  "author": "Gabriel Henrique Santos de Barros, João Pedro Palomares, Rafael Seles de Souza, Rian Siqueira Durigan, Sarah Stefany de Souza",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.16",

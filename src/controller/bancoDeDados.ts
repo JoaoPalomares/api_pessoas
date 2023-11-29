@@ -1,33 +1,51 @@
-import { Pessoa } from "../model/Pessoa";
+import { Veiculos } from "../model/Veiculos";
 
-let bancoDadosPessoa: Pessoa[] = [];
+/**
+ * Lista de veiculos que são armazenadas durante a execução do programa
+ */
+let bancoDadosVeiculos: Veiculos[] = [];
 
-export function persistirPessoa(pessoa: Pessoa) {
+/**
+ * Cadastra um veiculo na lista, simulando um banco de dados.
+ * Os dados são armazenados somente durante tempo de execução
+ * 
+ * @param veiculos - Veiculo a ser inserida na lista
+ * @returns Em caso de erro, é retornado os detalhes do erro a quem chamou esta função
+ */
+export function persistirVeiculos(veiculos: Veiculos) {
     //persistindo os dados
     try {
-        bancoDadosPessoa.push(pessoa);
+        bancoDadosVeiculos.push(veiculos);
     } catch {
         return `Erro ao persistir os dados\n ${Error}`;
     }
 }
 
-export function listarPessoas() {
-    return bancoDadosPessoa;
+/**
+ * Lista todas as pessoas cadastradas
+ * @returns Lista de pessoas cadastradas
+ */
+export function listarVeiculos() {
+    return bancoDadosVeiculos;
 }
+
+/**
+ * Método para inicializar o array com 5 pessoas.
+ * Apenas para a aplicação não ter um array vazio
+ */
+export function inicializarVeiculos() {
+    bancoDadosVeiculos.push(
+        new Veiculos('Volkswagen','Polo', '1.0','MTG-1174','Flex', 2, 1054));
     
-export function inicializarPessoas() {
-    bancoDadosPessoa.push(
-        new Pessoa('José Bryan Yuri Fogaça','10477613195',new Date(1998, 8, 29),'53984291927','Rua Capitão Felino Alves',174,102));
+    bancoDadosVeiculos.push(
+        new Veiculos('Lamborghini','Aventador','6.5','NDS-7960','Gasolina', 2, 1575));
     
-    bancoDadosPessoa.push(
-        new Pessoa('Pedro Marcos César Santos','92045970035',new Date(1986, 4, 22),'62999425959','Rua 3',167,76));
+    bancoDadosVeiculos.push(
+        new Veiculos('Porsche', '911', '3.0','KBN-1474','Gasolina', 2, 1505));
     
-    bancoDadosPessoa.push(
-        new Pessoa('Marcela Raquel Campos','79202391769',new Date(1977, 6, 1),'82993578543','Rua Doutor Antônio Aleixo de Paes Albuquerque',184,64));
-    
-    bancoDadosPessoa.push(
-        new Pessoa('Silvana Fernanda Rafaela Teixeira','42169128344',new Date(1971, 2, 22),'11995340104','Rua Água Preta',153,63));
-    
-    bancoDadosPessoa.push(
-        new Pessoa('Guilherme Giovanni Araújo','80431914095',new Date(1985, 10, 24),'85982754705','Rua Costa Freire',160,65));
+    bancoDadosVeiculos.push(
+        new Veiculos('Volvo','FH', '12.8' ,'HSW-0226','Diesel', 6, 9490));
+
+    bancoDadosVeiculos.push(
+        new Veiculos('Scania','R450', '6.0','MQO-6056','Diesel', 4, 9917));
 }
