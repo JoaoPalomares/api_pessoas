@@ -35,9 +35,9 @@ app.listen(port, () => {
 // Rota para cadastrar uma pessoa
 app.post('/cadastrar', (req, res) => {
     // Recuperando as informações JSON que vieram no corpo (body) da requisição (req) e desestruturando essa informação para cada atributo
-    const { marca, modelo, versao, placa, combustivel, eixos, peso } = req.body;
+    const { marca, modelo, ano_fabricacao, placa, cor, combustivel, eixos, peso, tipo_veiculo } = req.body;
     // Criando um novo objeto do tipo Pessoa com as informações recuperadas da requisição
-    const veiculo = new Veiculos_1.Veiculos(marca, modelo, versao, placa, combustivel, eixos, peso);
+    const veiculo = new Veiculos_1.Veiculos(marca, modelo, ano_fabricacao, placa, cor, combustivel, eixos, peso, tipo_veiculo);
     // Apenas imprimindo as informações do objeto no console do servidor
     console.log(veiculo);
     // Chamando a função para persistir (salvar) os dados da pessoa no banco de dados

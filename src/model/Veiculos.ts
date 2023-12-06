@@ -3,28 +3,32 @@ export class Veiculos {
     // atributos da classe
     private marca: string;
     private modelo: string;
-    private versao: string;
+    private ano_fabricacao: number;
     private placa: string;
+    private cor: string;
     private combustivel: string;
     private eixos: number;
     private peso: number;
+    private tipo_veiculo: string;
 
     //método construtor
-    public constructor(_marca: string, _modelo: string, _versao: string, _placa: string, _combustivel: string, _eixos: number, _peso: number) {
+    public constructor(_marca: string, _modelo: string, _ano_fabricacao: number, _placa: string, _cor: string, _combustivel: string, _eixos: number, _peso: number, _tipo_veiculo: string) {
         this.marca = _marca;
         this.modelo = _modelo;
-        this.versao = _versao;
+        this.ano_fabricacao = _ano_fabricacao;
         this.placa = _placa;
+        this.cor = _cor;
         this.combustivel = _combustivel;
         this.eixos = _eixos;
         this.peso = _peso;
+        this.tipo_veiculo = _tipo_veiculo;
     }
 
     // métodos GETTERS and SETTERS
     /**
      * Retorna o marca do veiculo
      * 
-     * @returns marca : marca do veículo
+     * @returns marca : marca do veículo 
      */
     public getMarca() {
         return this.marca;
@@ -52,12 +56,12 @@ export class Veiculos {
         this.modelo = _modelo;
     }
 
-    public getVersao() {
-        return this.versao;
+    public getAnoFabricacao() {
+        return this.ano_fabricacao;
     }
 
-    public setVersao(_versao: string) {
-        this.versao = _versao;
+    public setVersao(_ano_fabricacao: number) {
+        this.ano_fabricacao = _ano_fabricacao;
     }
 
     public getPlaca() {
@@ -68,6 +72,14 @@ export class Veiculos {
         this.placa = _placa;
     }
 
+    public getCor(){
+        return this.cor;
+    }
+
+    public setCor(_cor: string){
+        this.cor = _cor
+    }
+    
     public getCombustivel() {
         return this.combustivel;
     }
@@ -98,13 +110,23 @@ export class Veiculos {
         this.peso = _peso;
     }
 
+    public getTipoVeiculo() {
+        return this.tipo_veiculo;
+    }
+
+    public setTipoVeiculo(_tipo_veiculo: string) {
+        this.tipo_veiculo = _tipo_veiculo;
+    }
+
     public mostraVeiculos() {
         console.log(`Marca: ${this.marca}
         Modelo: ${this.modelo}
-        Versão: ${this.versao}
+        Ano Fabricação: ${this.ano_fabricacao}
         Placa: ${this.placa}
+        Cor: ${this.cor}
         Combustível: ${this.combustivel}
         Eixos: ${this.eixos}
-        Peso: ${this.peso}`);
+        Peso: ${this.peso};
+        Tipo de Veículo: ${this.tipo_veiculo};`);
     }
 }

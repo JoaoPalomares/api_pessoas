@@ -36,11 +36,11 @@ exports.listarVeiculos = listarVeiculos;
  * Apenas para a aplicação não ter um array vazio
  */
 function inicializarVeiculos() {
-    bancoDadosVeiculos.push(new Veiculos_1.Veiculos('Volkswagen', 'Polo', '1.0', 'MTG-1174', 'Flex', 2, 1054));
-    bancoDadosVeiculos.push(new Veiculos_1.Veiculos('Lamborghini', 'Aventador', '6.5', 'NDS-7960', 'Gasolina', 2, 1575));
-    bancoDadosVeiculos.push(new Veiculos_1.Veiculos('Porsche', '911', '3.0', 'KBN-1474', 'Gasolina', 2, 1505));
-    bancoDadosVeiculos.push(new Veiculos_1.Veiculos('Volvo', 'FH', '12.8', 'HSW-0226', 'Diesel', 6, 9490));
-    bancoDadosVeiculos.push(new Veiculos_1.Veiculos('Scania', 'R450', '6.0', 'MQO-6056', 'Diesel', 4, 9917));
+    bancoDadosVeiculos.push(new Veiculos_1.Veiculos('Volkswagen', 'Polo', 2002, 'MTG-1174', 'prata', 'Flex', 2, 1054, 'leve'));
+    bancoDadosVeiculos.push(new Veiculos_1.Veiculos('Lamborghini', 'Aventador', 2014, 'NDS-7960', 'amarelo', 'Gasolina', 2, 1575, 'leve'));
+    bancoDadosVeiculos.push(new Veiculos_1.Veiculos('Porsche', '911', 2012, 'azul', 'KBN-1474', 'Gasolina', 2, 1505, 'leve'));
+    bancoDadosVeiculos.push(new Veiculos_1.Veiculos('Volvo', 'FH', 2015, 'HSW-0226', 'rosa', 'Diesel', 6, 9490, 'pesado'));
+    bancoDadosVeiculos.push(new Veiculos_1.Veiculos('Scania', 'R450', 2017, 'MQO-6056', 'preto', 'Diesel', 4, 9917, 'pesado'));
 }
 exports.inicializarVeiculos = inicializarVeiculos;
 //# sourceMappingURL=bancoDeDados.js.map

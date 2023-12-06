@@ -3,14 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Veiculos = void 0;
 class Veiculos {
     //método construtor
-    constructor(_marca, _modelo, _versao, _placa, _combustivel, _eixos, _peso) {
+    constructor(_marca, _modelo, _ano_fabricacao, _placa, _cor, _combustivel, _eixos, _peso, _tipo_veiculo) {
         this.marca = _marca;
         this.modelo = _modelo;
-        this.versao = _versao;
+        this.ano_fabricacao = _ano_fabricacao;
         this.placa = _placa;
+        this.cor = _cor;
         this.combustivel = _combustivel;
         this.eixos = _eixos;
         this.peso = _peso;
+        this.tipo_veiculo = _tipo_veiculo;
     }
     // métodos GETTERS and SETTERS
     /**
@@ -40,17 +42,23 @@ class Veiculos {
     setModelo(_modelo) {
         this.modelo = _modelo;
     }
-    getVersao() {
-        return this.versao;
+    getAnoFabricacao() {
+        return this.ano_fabricacao;
     }
-    setVersao(_versao) {
-        this.versao = _versao;
+    setVersao(_ano_fabricacao) {
+        this.ano_fabricacao = _ano_fabricacao;
     }
     getPlaca() {
         return this.placa;
     }
     setPlaca(_placa) {
         this.placa = _placa;
+    }
+    getCor() {
+        return this.cor;
+    }
+    setCor(_cor) {
+        this.cor = _cor;
     }
     getCombustivel() {
         return this.combustivel;
@@ -76,14 +84,22 @@ class Veiculos {
     setPeso(_peso) {
         this.peso = _peso;
     }
+    getTipoVeiculo() {
+        return this.tipo_veiculo;
+    }
+    setTipoVeiculo(_tipo_veiculo) {
+        this.tipo_veiculo = _tipo_veiculo;
+    }
     mostraVeiculos() {
         console.log(`Marca: ${this.marca}
         Modelo: ${this.modelo}
-        Versão: ${this.versao}
+        Ano Fabricação: ${this.ano_fabricacao}
         Placa: ${this.placa}
+        Cor: ${this.cor}
         Combustível: ${this.combustivel}
         Eixos: ${this.eixos}
-        Peso: ${this.peso}`);
+        Peso: ${this.peso};
+        Tipo de Veículo: ${this.tipo_veiculo};`);
     }
 }
 exports.Veiculos = Veiculos;
